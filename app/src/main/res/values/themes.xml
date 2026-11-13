@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LankaFare" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/primary_brand</item>
+        <item name="android:windowBackground">@color/bg_screen</item>
+        <item name="colorPrimary">@color/primary_brand</item>
+        <item name="colorPrimaryDark">@color/primary_brand</item>
+        <item name="colorAccent">@color/status_active_green</item>
+    </style>
+</resources>
