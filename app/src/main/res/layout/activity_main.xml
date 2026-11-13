@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F5F9"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- App Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="#0F172A"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/header_subtitle"
+                android:textColor="#475569"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Service & Permissions Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/section_permissions"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Accessibility Status Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ride Reader (Accessibility)"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAccessibilityStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Disabled • Tap Enable"
+                            android:textColor="#B71C1C"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnEnableAccessibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:backgroundTint="#0F172A"
+                        android:text="Enable"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#E2E8F0" />
+
+                <!-- Overlay Permission Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Floating Banner (Overlay)"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvOverlayStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Not Granted • Tap Grant"
+                            android:textColor="#B71C1C"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnGrantOverlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:backgroundTint="#0F172A"
+                        android:text="Grant"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#E2E8F0" />
+
+                <!-- KeepAlive Foreground Service Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Background Keep-Alive Service"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvKeepAliveStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stopped • Tap Start"
+                            android:textColor="#F57F17"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnToggleKeepAlive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:backgroundTint="#1B5E20"
+                        android:text="Start"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#E2E8F0" />
+
+                <!-- Battery Optimization Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Battery Optimization"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvBatteryStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Restricted • Allow Unrestricted"
+                            android:textColor="#F57F17"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBatteryIgnore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:backgroundTint="#334155"
+                        android:text="Allow"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Xiaomi / Redmi MIUI & HyperOS Anti-Kill Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/section_xiaomi"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/xiaomi_tip_text"
+                    android:textColor="#475569"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnXiaomiAutostart"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="#EA580C"
+                    android:text="@string/btn_xiaomi_autostart"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnMiuiOtherPermissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:backgroundTint="#1E293B"
+                    android:text="@string/btn_miui_popup"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fare Engine & Audio Alert Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/section_engine"
+                    android:textColor="#0F172A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Green Ride Beep Alert Toggle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_green_beep"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc_green_beep"
+                            android:textColor="#64748B"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchGreenBeep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#E2E8F0" />
+
+                <!-- Threshold Inputs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comm. %"
+                            android:textColor="#475569"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/etCommissionPct"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:hint="15"
+                            android:inputType="numberDecimal"
+                            android:textColor="#0F172A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Green Rs/km"
+                            android:textColor="#1B5E20"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etGreenThreshold"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:hint="120"
+                            android:inputType="numberDecimal"
+                            android:textColor="#0F172A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amber Rs/km"
+                            android:textColor="#F57F17"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAmberThreshold"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:hint="85"
+                            android:inputType="numberDecimal"
+                            android:textColor="#0F172A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSaveSettings"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#0F172A"
+                        android:text="Save Settings"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btnTestOverlay"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#1B5E20"
+                        android:text="Test Green Banner"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- About & Developer Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/section_about"
+                    android:textColor="#0F172A"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_app_version"
+                    android:textColor="#1E293B"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/about_developer"
+                    android:textColor="#475569"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvDeveloperEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/about_email"
+                    android:textColor="#1D4ED8"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

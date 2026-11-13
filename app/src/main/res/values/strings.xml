@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">X FareLK</string>
+    <string name="accessibility_service_label">X FareLK Ride Reader</string>
+    <string name="accessibility_service_description">Reads incoming trip fare and distance details from PickMe Driver, Uber Driver, and HelaGo to display Net Rs/KM profitability. Runs 100% offline with zero data collection.</string>
+
+    <string name="header_subtitle">v2.0 Pro • Sri Lankan Driver Profit Guard</string>
+    <string name="section_permissions">Service &amp; Permissions</string>
+    <string name="section_xiaomi">Xiaomi / Redmi (MIUI &amp; HyperOS) Anti-Kill</string>
+    <string name="section_engine">Fare Engine &amp; Audio Alert</string>
+    <string name="section_about">About &amp; Developer</string>
+
+    <string name="btn_xiaomi_autostart">Xiaomi / Redmi Autostart</string>
+    <string name="btn_miui_popup">MIUI Other Permissions (Pop-up)</string>
+    <string name="xiaomi_tip_text">Xiaomi / Redmi Tip: Enable "Display pop-up windows while running in the background" and lock X FareLK in Recent Apps (long-press app card and tap the padlock icon).</string>
+
+    <string name="label_green_beep">Green Ride Beep Alert</string>
+    <string name="desc_green_beep">Play subtle dual-beep chime only for High Profit (Green) rides</string>
+
+    <string name="about_app_version">X FareLK v2.0 Pro (Xiaomi Optimized)</string>
+    <string name="about_developer">Developed by Rukshan Wijesinghe</string>
+    <string name="about_email">rukimw@gmail.com</string>
+
+    <string name="fgs_channel_name">X FareLK Background Guard</string>
+    <string name="fgs_notification_title">X FareLK Active • Monitoring Rides</string>
+    <string name="fgs_notification_text">Listening for PickMe, Uber &amp; HelaGo offers</string>
+</resources>
